@@ -62,17 +62,16 @@
   <ItemGroup>
     <Compile Include="Entities\Dices\Dice.cs" />
     <Compile Include="Entities\Dices\DiceQueue.cs" />
-    <Compile Include="Entities\Fraction.cs" />
+    <Compile Include="Entities\Fractions\Fraction.cs" />
     <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Entities\Fractions\FractionManager.cs" />
     <Compile Include="Entities\ItemType.cs" />
     <Compile Include="Entities\Pool\PoolItem.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_main.xml">
@@ -101,6 +100,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Items\" />
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
