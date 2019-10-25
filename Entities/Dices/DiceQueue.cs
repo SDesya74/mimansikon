@@ -1,33 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using System.Collections.Generic;
 
 namespace Mimansikon.Entities.Dices {
 	public class DiceQueue<T> {
 		public List<(T, List<Dice>)> Queue { get; private set; }
 
 
+		public DiceQueue(List<T> list) {
+			Queue = new List<(T, List<Dice>)>();
+			list.ForEach(e => Queue.Add((e, new List<Dice>())));
+		}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+		public void Randomize() {
+#warning RANDOMIZE
+		}
 	}
 }
