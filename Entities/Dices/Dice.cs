@@ -12,5 +12,8 @@ using Android.Widget;
 
 namespace Mimansikon.Entities.Dices {
 	public class Dice {
+		private static Random DiceRandom = new Random(DateTime.Now.ToUniversalTime().Millisecond);
+		public int Value { get; private set; }
+		
 	}
 }
