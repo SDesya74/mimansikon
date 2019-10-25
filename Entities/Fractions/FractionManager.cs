@@ -17,6 +17,5 @@ namespace Mimansikon.Entities.Fractions {
 		public static void Load() {
 			List = (List<Fraction>) DataSaver.Read("fractions") ?? new List<Fraction>();
 		}
-
 	}
 }
