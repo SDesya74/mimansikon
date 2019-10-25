@@ -20,6 +20,10 @@ namespace Mimansikon.Entities.Dices {
 			return this;
 		}
 
-		
+
+		public static Dice Random() {
+			return new Dice().Roll();
+		}
+
 	}
 }
