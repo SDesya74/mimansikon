@@ -66,7 +66,10 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Entities\Fractions\FractionManager.cs" />
     <Compile Include="Entities\ItemType.cs" />
+    <Compile Include="App.cs" />
     <Compile Include="Entities\Pool\PoolItem.cs" />
+    <Compile Include="Misc\DataSaver.cs" />
+    <Compile Include="Misc\Screen.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -101,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Items\" />
+    <Folder Include="Entities\Pick\" />
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>

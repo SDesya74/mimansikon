@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 
 namespace Mimansikon.Entities {
-	class Fraction {
+	public class Fraction {
+		public String Name { get; set; }
 	}
 }

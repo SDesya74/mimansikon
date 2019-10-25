@@ -11,6 +11,12 @@ using Android.Views;
 using Android.Widget;
 
 namespace Mimansikon.Entities.Fractions {
-	class FractionManager {
+	public static class FractionManager {
+		public static List<Fraction> List;
+		
+		public static void Init() {
+
+		}
+
 	}
 }
