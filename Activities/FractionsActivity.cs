@@ -30,11 +30,12 @@ namespace Mimansikon.Activities {
 		}
 
 		protected override void OnCreateContent(ViewGroup Content) {
-			ObservableScrollView scroll = new ObservableScrollView(this);
-			//SetContentView(scroll);
+			using(ObservableScrollView scroll = new ObservableScrollView(this)) {
+				//SetContentView(scroll);
 
-			Main = new LinearLayout(this);
-			scroll.AddView(Main);
+				Main = new LinearLayout(this);
+				scroll.AddView(Main);
+			}
 
 			var parameters = new RelativeLayout.LayoutParams(WrapContent, WrapContent);
 			parameters.AddRule(LayoutRules.AlignParentEnd);
@@ -57,8 +58,6 @@ namespace Mimansikon.Activities {
 			BuildList();
 		}
 
-
-
 		public void BuildList() {
 			FractionManager.Load();
 			Main.RemoveAllViews();
@@ -71,9 +70,10 @@ namespace Mimansikon.Activities {
 			main.SetPadding(3.Dip(), 3.Dip(), 3.Dip(), 3.Dip());
 			Main.AddView(main);
 
-			TextView name = new TextView(this);
-			name.Text = item.Name;
-			name.Gravity = GravityFlags.Center | GravityFlags.Left;
+			TextView name = new TextView(this) {
+				Text = item.Name,
+				Gravity = GravityFlags.Center | GravityFlags.Left
+			};
 			name.SetTypeface(Typeface.Default, TypefaceStyle.Bold);
 			main.AddView(name);
 		}
