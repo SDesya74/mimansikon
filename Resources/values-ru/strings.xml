@@ -3,4 +3,5 @@
   <string name="fractions_activity">Фракции</string>
   <string name="dices_activity">Кубики</string>
   <string name="pick_menu_activity">Разбор предметов</string>
+  <string name="players_activity">Игроки</string>
 </resources>
