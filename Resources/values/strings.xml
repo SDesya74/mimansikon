@@ -3,4 +3,5 @@
   <string name="fractions_activity">Fractions</string>
   <string name="dices_activity">Dices</string>
   <string name="pick_menu_activity">Pick menu</string>
+  <string name="players_activity">Players</string>
 </resources>
