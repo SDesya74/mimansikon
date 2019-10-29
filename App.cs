@@ -1,12 +1,12 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Runtime;
-using Mimansikon.Entities.Fractions;
-
-using Android.Graphics;
 using Android.Widget;
+
+using Mimansikon.Entities.Fractions;
+using Mimansikon.Entities.Players;
+using Mimansikon.Util;
+using System;
 
 [Application]
 public class App : Application {
@@ -21,8 +21,13 @@ public class App : Application {
 
 	public override void OnCreate() {
 		base.OnCreate();
-
 		Context = ApplicationContext;
+
+		FontManager.Init(Context);
+		DataSaver.Init(Context);
+		Screen.Init(Context);
+
+		PlayerManager.Init();
 		FractionManager.Init();
 	}
 }
