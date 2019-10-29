@@ -1,11 +1,11 @@
-﻿using Mimansikon.Misc;
+﻿using Mimansikon.Util;
 
 using System.Collections.Generic;
 
 namespace Mimansikon.Entities.Fractions {
 	public static class FractionManager {
 		public static List<Fraction> List;
-		
+
 		public static void Init() {
 			List = new List<Fraction>();
 		}

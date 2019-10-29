@@ -49,20 +49,11 @@ namespace Mimansikon.Activities {
 			button.ColorNormal = GetColor(Resource.Color.colorPrimary);
 			button.ColorPressed = GetColor(Resource.Color.colorPrimaryDark);
 			button.Click += delegate {
-				App.Message("Button clicked");
-
-				LinearLayout m = new LinearLayout(this);
-				m.SetBackgroundColor(new Color(GetColor(Resource.Color.colorMimansikonYellow)));
-				m.LayoutParameters = new ViewGroup.LayoutParams(Screen.Width, Screen.Height);
-				AddContentView(m);
-
-				/*var dialog = new NewFractionDialog(this, Screen.Width / 4 * 3, Screen.Height / 3 * 2);
-				
-				dialog.Show();*/
-
+				var dialog = new NewFractionDialog(this);
+				dialog.SetSize(Screen.Width / 4 * 3, Screen.Height / 2);
+				dialog.ShowAt(button);
 			};
 			AddContentView(button);
-
 			BuildList();
 		}
 
