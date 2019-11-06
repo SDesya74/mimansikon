@@ -12,16 +12,17 @@ using static Android.Views.ViewGroup.LayoutParams;
 
 namespace Mimansikon.ViewUtil {
 	public class ActionBar {
-		private RelativeLayout Main;
+		private readonly RelativeLayout Main;
+		private readonly LinearLayout Buttons;
 		public View View {
 			get {
 				return Main;
 			}
 		}
 
-		LinearLayout TitleLayout;
-		TextView TitleView;
-		TextView SubtitleView;
+		readonly LinearLayout TitleLayout;
+		readonly TextView TitleView;
+		readonly TextView SubtitleView;
 
 
 		public string Title {
@@ -86,6 +87,29 @@ namespace Mimansikon.ViewUtil {
 			};
 			SubtitleView.Visibility = ViewStates.Gone;
 			TitleLayout.AddView(SubtitleView);
+
+
+			Buttons = new LinearLayout(context);
+			var p = new RelativeLayout.LayoutParams(WrapContent, WrapContent);
+			p.AddRule(LayoutRules.AlignParentEnd);
+			p.AddRule(LayoutRules.CenterVertical);
+			Buttons.LayoutParameters = p;
+			Main.AddView(Buttons);
+		}
+
+
+		public delegate void OnClick(View view);
+		public void AddButton(Drawable icon, OnClick listener) {
+			ImageView view = new ImageView(View.Context);
+			view.SetImageDrawable(icon);
+
+			int pd = Screen.Dip(16);
+			view.SetPadding(pd, pd, pd, pd);
+			view.LayoutParameters = new LinearLayout.LayoutParams(Screen.ActionBarHeight, Screen.ActionBarHeight);
+			view.Click += delegate {
+				listener(view);
+			};
+			Buttons.AddView(view);
 		}
 	}
 }
