@@ -7,7 +7,7 @@ using Mimansikon.Util;
 using System;
 
 namespace Mimansikon.ViewUtil {
-	class Button : Android.Widget.Button {
+	public class Button : Android.Widget.Button {
 		public Button(Context context) : base(context) {
 			SetTypeface(FontManager.Current, Android.Graphics.TypefaceStyle.Bold);
 		}
