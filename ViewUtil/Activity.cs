@@ -69,7 +69,7 @@ namespace Mimansikon.ViewUtil {
 
 		private RelativeLayout DialogLayout;
 		private List<Dialog> Dialogs;
-		public void AddDialog(Dialog dialog) {
+		internal void AddDialog(Dialog dialog) {
 			if(DialogLayout == null) {
 				DialogLayout = new RelativeLayout(this) {
 					LayoutParameters = new ViewGroup.LayoutParams(MatchParent, MatchParent)
