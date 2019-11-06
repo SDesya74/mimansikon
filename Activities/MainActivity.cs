@@ -23,7 +23,7 @@ namespace Mimansikon.Activities {
 	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
 	public class MainActivity : ViewUtil.Activity {
 		protected override ActionBar OnCreateActionBar(ActionBar bar) {
-			bar.Color = new Color(GetColor(Resource.Color.colorMimansikonPurple));
+			bar.Color = new Color(GetColor(Resource.Color.colorPrimary));
 			bar.TextColor = Color.White;
 			bar.Title = GetString(Resource.String.app_name);
 			return bar;
@@ -35,8 +35,9 @@ namespace Mimansikon.Activities {
 			parent.SetGravity(GravityFlags.Center);
 			Content.AddView(parent);
 
-			LinearLayout main = new LinearLayout(this);
-			main.Orientation = Orientation.Vertical;
+			LinearLayout main = new LinearLayout(this) {
+				Orientation = Orientation.Vertical
+			};
 			parent.AddView(main);
 
 			var players = CreateButton(Resource.String.players_activity, delegate {
@@ -68,7 +69,7 @@ namespace Mimansikon.Activities {
 
 		private Button CreateButton(int resource, EventHandler handler) {
 			Button button = new Button(this) {
-				Color = new Color(GetColor(Resource.Color.colorMimansikonPurple))
+				Color = new Color(GetColor(Resource.Color.colorPrimaryDark))
 			};
 			button.SetTextColor(Color.White);
 			button.SetText(resource);
@@ -76,7 +77,7 @@ namespace Mimansikon.Activities {
 			return button;
 		}
 
-		public void LoadManagers() {
+		public static void LoadManagers() {
 			PlayerManager.Load();
 			FractionManager.Load();
 		}
