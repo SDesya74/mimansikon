@@ -1,5 +1,7 @@
 ﻿using Android.Animation;
 using Android.Graphics;
+using Android.Graphics.Drawables;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -7,9 +9,13 @@ using Mimansikon.Util;
 
 using System;
 
+using static Android.Views.ViewGroup.LayoutParams;
+
 namespace Mimansikon.ViewUtil {
-	public class Dialog : IDisposable{
+	public class Dialog : IDisposable {
 		public readonly LinearLayout View;
+		public readonly LinearLayout ContentView;
+		public readonly LinearLayout Buttons;
 		public bool Closeable { get; set; } = true;
 
 		protected readonly Activity Context;
@@ -18,9 +24,60 @@ namespace Mimansikon.ViewUtil {
 
 			View = new LinearLayout(context);
 			View.SetBackgroundColor(Color.White);
+			View.Orientation = Orientation.Vertical;
 			View.SetGravity(GravityFlags.Center);
+
+			TitleView = new TextView(context) {
+				TextSize = TypedValue.ApplyDimension(ComplexUnitType.Sp, 6, Screen.DisplayMetrics),
+				Gravity = GravityFlags.Left | GravityFlags.Center,
+				Visibility = ViewStates.Gone
+			};
+			int pd = 5.Dip();
+			TitleView.SetPadding(pd, pd, pd, pd);
+			View.AddView(TitleView);
+
+			ContentView = new LinearLayout(context) {
+				LayoutParameters = new LinearLayout.LayoutParams(MatchParent, WrapContent, 1f)
+			};
+			View.AddView(ContentView);
+
+			Buttons = new LinearLayout(context) {
+				Orientation = Orientation.Horizontal
+			};
+			Buttons.SetGravity(GravityFlags.Right);
+			View.AddView(Buttons);
+
 			OnCreate();
 		}
+
+
+
+
+		public delegate bool OnButtonClick(Button button);
+		public Button AddButton(int res, OnButtonClick onclick) {
+			return AddButton(Context.GetString(res), onclick);
+		}
+
+		public Button AddButton(String text, OnButtonClick onclick) {
+			Button button = new Button(Context) {
+				LayoutParameters = new LinearLayout.LayoutParams(WrapContent, WrapContent, 1f),
+				Text = text,
+				Color = new Color(Context.GetColor(Resource.Color.colorPrimaryDark)),
+			};
+			button.SetTextColor(Color.White);
+
+			button.Click += delegate {
+				if(onclick(button)) {
+					Close();
+				}
+			};
+			Buttons.AddView(button);
+			return button;
+		}
+
+
+
+
 
 		int Width;
 		int Height;
@@ -30,14 +87,51 @@ namespace Mimansikon.ViewUtil {
 		}
 
 		protected void SetContentView(View view) {
-			View.AddView(view);
-			View.Click += delegate { };
+			ContentView.RemoveAllViews();
+			ContentView.AddView(view);
 		}
 		protected virtual void OnCreate() {
 		}
 
+		protected String Title {
+			get { return TitleView.Text; }
+			set {
+				TitleView.Text = value;
+				TitleView.Visibility = ViewStates.Visible;
+			}
+		}
+		protected Color TitleColor {
+			get {
+				return ((ColorDrawable) TitleView.Background).Color;
+			}
+			set {
+				TitleView.SetBackgroundColor(value);
+			}
+		}
+		protected Color TitleTextColor {
+			get {
+				return new Color(TitleView.CurrentTextColor);
+			}
+			set {
+				TitleView.SetTextColor(value);
+			}
+		}
+		private TextView TitleView { get; set; }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+		#region Showing & Closing
 		public Rect ShowCoords;
 		public void Show() {
 			if(ShowCoords == null) {
@@ -129,10 +223,15 @@ namespace Mimansikon.ViewUtil {
 			Show();
 		}
 
+		#endregion
+
 		public void Dispose() {
 			View.Dispose();
+			ContentView.Dispose();
+			Buttons.Dispose();
 			OpenAnimator?.Dispose();
 			CloseAnimator?.Dispose();
+			ShowCoords.Dispose();
 		}
 	}
 }
