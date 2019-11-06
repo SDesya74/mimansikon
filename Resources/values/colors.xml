@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorPrimary">#2c3e50</color>
-  <color name="colorPrimaryDark">#1B3147</color>
-  <color name="colorAccent">#3498db</color>
+  <color name="colorPrimary">#89009c</color>
+  <color name="colorPrimaryDark">#78008b</color>
+  <color name="colorAccent">#67007a</color>
 
-  <color name="colorMimansikonPurple">#89009c</color>
-  <color name="colorMimansikonYellow">#fd7600</color>
-  <color name="colorMimansikonBlack">#000000</color>
-  <color name="colorMimansikonRed">#b60000</color>
-  <color name="colorMimansikonRedLogo">#fd0000</color>
+  <!-- 
+    <color name="colorMimansikonPurple">#89009c</color>
+    <color name="colorMimansikonYellow">#fd7600</color>
+    <color name="colorMimansikonBlack">#000000</color>
+    <color name="colorMimansikonRed">#b60000</color>
+    <color name="colorMimansikonRedLogo">#fd0000</color>
+  -->
 </resources>
