@@ -87,6 +87,7 @@
     <Compile Include="ViewUtil\Activity.cs" />
     <Compile Include="ViewUtil\Button.cs" />
     <Compile Include="ViewUtil\Dialog.cs" />
+    <Compile Include="ViewUtil\EditText.cs" />
     <Compile Include="ViewUtil\TextView.cs" />
   </ItemGroup>
   <ItemGroup>
