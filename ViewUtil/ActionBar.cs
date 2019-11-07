@@ -24,7 +24,6 @@ namespace Mimansikon.ViewUtil {
 		readonly TextView TitleView;
 		readonly TextView SubtitleView;
 
-
 		public string Title {
 			get {
 				return TitleView.Text;
