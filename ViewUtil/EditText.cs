@@ -14,8 +14,8 @@ namespace Mimansikon.ViewUtil {
 			SetTypeface(FontManager.Current, TypefaceStyle.Bold);
 		}
 
-		protected EditText(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) {
-		}
+		protected EditText(IntPtr javaReference, JniHandleOwnership transfer) 
+			: base(javaReference, transfer) {}
 
 		public void SetColor(Color color) {
 			if(Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop) {
