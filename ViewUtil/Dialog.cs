@@ -76,9 +76,6 @@ namespace Mimansikon.ViewUtil {
 		}
 
 
-
-
-
 		int Width;
 		int Height;
 		public void SetSize(int width, int height) {
@@ -117,17 +114,6 @@ namespace Mimansikon.ViewUtil {
 			}
 		}
 		private TextView TitleView { get; set; }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
