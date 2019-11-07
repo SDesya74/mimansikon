@@ -8,8 +8,9 @@ using System;
 
 namespace Mimansikon.ViewUtil {
 	public class Button : Android.Widget.Button {
-		public Button(Context context) : base(context) {
-			SetTypeface(FontManager.Current, Android.Graphics.TypefaceStyle.Bold);
+		public Button(Context context)
+			: base(context) {
+			SetTypeface(FontManager.Current, TypefaceStyle.Bold);
 		}
 
 		private Android.Graphics.Color _color;
