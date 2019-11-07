@@ -1,15 +1,13 @@
 ﻿
 using Android.App;
 using Android.OS;
-using Android.Support.V7.App;
+using Activity = Mimansikon.ViewUtil.Activity;
 
 namespace Mimansikon.Activities {
 	[Activity(Label = "@string/pick_menu_activity")]
-	public class PickMenuActivity : AppCompatActivity {
+	public class PickMenuActivity : Activity {
 		protected override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
-
-			// Create your application here
 		}
 	}
 }
