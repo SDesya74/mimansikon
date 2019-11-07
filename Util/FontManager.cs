@@ -1,5 +1,4 @@
 ﻿using Android.Content;
-using Android.Content.Res;
 using Android.Graphics;
 
 namespace Mimansikon.Util {
