@@ -64,9 +64,6 @@ namespace Mimansikon.ViewUtil {
 			DecorView.RemoveView(view);
 		}
 
-
-
-
 		private RelativeLayout DialogLayout;
 		private List<Dialog> Dialogs;
 		internal void AddDialog(Dialog dialog) {
