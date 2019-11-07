@@ -12,9 +12,8 @@ namespace Mimansikon.ViewUtil {
 			Typeface = FontManager.Current;
 		}
 
-		protected TextView(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) {
-			
-		}
+		protected TextView(IntPtr javaReference, JniHandleOwnership transfer) 
+			: base(javaReference, transfer) {}
 
 		public void SetTypefaceStyle(TypefaceStyle style) {
 			SetTypeface(FontManager.Current, style);
