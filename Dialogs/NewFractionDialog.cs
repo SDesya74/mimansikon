@@ -15,9 +15,6 @@ namespace Mimansikon.Dialogs {
 		public NewFractionDialog(Activity context) : base(context) {
 		}
 
-
-
-
 		public string FractionName { get { return NameEdit.Text; } }
 		private EditText NameEdit;
 
