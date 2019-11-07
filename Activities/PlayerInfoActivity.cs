@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using Activity = Mimansikon.ViewUtil.Activity;
 
 namespace Mimansikon.Activities {
 	[Activity(Label = "PlayerInfoActivity")]
 	public class PlayerInfoActivity : Activity {
 		protected override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
-
-			// Create your application here
 		}
 	}
 }
